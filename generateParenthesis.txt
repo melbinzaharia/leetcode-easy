@@ -1,0 +1,19 @@
+import java.util.*;
+class Solution {
+    public List<String> generateParenthesis(int n) {
+        List<String> res=new ArrayList<>();
+        createParenthesis(res,"",0,0,n);
+            return res;
+    }    
+        public void createParenthesis(List<String>res,String result,int start,int close,int n){
+            if(start==n&&close==n){
+                res.add(result);
+                return;
+            }
+            if(start<n){
+                createParenthesis(res,result+"(",start+1,close,n);
+            }if(close<start){
+                createParenthesis(res,result+")",start,close+1, n);
+            }
+        }
+    }
