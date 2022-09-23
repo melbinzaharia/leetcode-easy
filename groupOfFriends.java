@@ -20,4 +20,4 @@ class Main{
         }
         System.out.println(count);
     }
-}
+}//01100111101110 -// 0 represents number of emptyseat 1 represent number of friends
