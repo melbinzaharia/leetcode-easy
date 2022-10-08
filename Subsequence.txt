@@ -1,0 +1,41 @@
+import java.util.*;
+class Main{
+    public static void main(String args[]){
+        Scanner in =new Scanner(System.in);
+        int n=in.nextInt();
+        int m=in.nextInt();
+        String s=in.next();
+        String d=in.next();
+        if(n>m){
+            System.out.println("NO");
+        }else{
+              check(s,d);
+        }
+      
+        
+        
+    }
+    public static void check(String s,String d){
+        
+        int i=0;
+        int j=0;
+        int c=0;
+        while(i<s.length() && j< d.length()){
+            if(s.charAt(i)==d.charAt(j)){
+                i++;
+            }
+            if(i==s.length()){
+                c=1;
+                break;
+            }
+            j++;
+        }
+        if(c==1){
+             System.out.println("YES");
+           
+        }else{
+            System.out.println("NO");
+        }
+    }
+}
+      
