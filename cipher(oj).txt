@@ -1,0 +1,43 @@
+import java.io.*; 
+import java.util.*; 
+import java.util.stream.*; 
+import static java.util.stream.Collectors.toList; 
+ 
+public class Main { 
+    public static void check(String s,int n){ 
+        Stack<Character> st=new Stack<>();
+        s+=" ";
+        String str="";
+        st.push(s.charAt(0));
+        for(int i=1;i<=n;i++){
+            if(st.isEmpty()||st.peek()==s.charAt(i)){
+                // System.out.println(st);
+                st.push(s.charAt(i));
+                
+            }else if(st.peek()!=s.charAt(i)){
+                char ch=st.peek();
+                str+=ch;
+                str+=st.size();
+                
+                st.clear();
+                st.push(s.charAt(i));
+                //   System.out.println(st);
+            }
+           
+        }
+        System.out.println(str);
+    } 
+    
+    public static void main(String[] args) throws IOException{ 
+            
+       Scanner in = new Scanner(System.in);
+       int t=in.nextInt();
+       for(int i=0;i<t;i++){
+           int n=in.nextInt();
+           String s=in.next();
+           check(s,n);
+       }
+        } 
+        
+    } 
+
